@@ -26,7 +26,7 @@ jobs:
           
       - name: Test assessmentdata
         run: |
-          Rscript -e 'print(nrow(assessmentdata::stockAssessmentSummary))
-          print(nrow(assessmentdata::stockAssessmentData))
+          Rscript -e 'print(nrow(assessmentdata::stockAssessmentSummary)) # 2004 when run locally
+          print(nrow(assessmentdata::stockAssessmentData)) # 187655 when run locally
           print(head(assessmentdata::stockAssessmentSummary))
           print(head(assessmentdata::stockAssessmentData))'
