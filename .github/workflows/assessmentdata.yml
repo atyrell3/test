@@ -13,6 +13,11 @@ jobs:
 
       - name: Set up R
         uses: r-lib/actions/setup-r@master
+      
+      - name: Install command line packages
+        run: |        
+          sudo R CMD javareconf
+          sudo apt-get install libcurl4-openssl-dev libgdal-dev libgit2-dev libudunits2-dev
         
       - name: Test assessmentdata
         run: |
