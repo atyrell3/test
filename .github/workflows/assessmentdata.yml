@@ -1,0 +1,22 @@
+name: test_assessmentdata
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@master
+        
+      - name: Test assessmentdata
+        run: |
+          Rscript -e 'install.packages("remotes")
+          remotes::install_github("NOAA-EDAB/assessmentdata")
+          print(assessmentdata::stockAssessmentSummary)
+          print(assessmentdata::stockAssessmentData)
