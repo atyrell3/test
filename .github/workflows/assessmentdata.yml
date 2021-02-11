@@ -24,9 +24,10 @@ jobs:
           Rscript -e 'install.packages("remotes")
           remotes::install_github("NOAA-EDAB/assessmentdata")'
           
-      - name: Test assessmentdata
+      - name: Test assessmentdata::stockAssessmentSummary nrows - 2004 when run locally
         run: |
-          Rscript -e 'print(nrow(assessmentdata::stockAssessmentSummary)) # 2004 when run locally
-          print(nrow(assessmentdata::stockAssessmentData)) # 187655 when run locally
-          print(head(assessmentdata::stockAssessmentSummary))
-          print(head(assessmentdata::stockAssessmentData))'
+          Rscript -e 'print(nrow(assessmentdata::stockAssessmentSummary))'
+          
+      - name: Test assessmentdata::stockAssessmentData nrows - 187655 when run locally
+        run: |
+          Rscript -e 'print(nrow(assessmentdata::stockAssessmentData))'
