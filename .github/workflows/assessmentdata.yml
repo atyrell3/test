@@ -19,9 +19,12 @@ jobs:
           sudo R CMD javareconf
           sudo apt-get install libcurl4-openssl-dev libgdal-dev libgit2-dev libudunits2-dev
         
-      - name: Test assessmentdata
+      - name: Install assessmentdata
         run: |
           Rscript -e 'install.packages("remotes")
-          remotes::install_github("NOAA-EDAB/assessmentdata")
-          print(assessmentdata::stockAssessmentSummary)
+          remotes::install_github("NOAA-EDAB/assessmentdata")'
+          
+      - name: Test assessmentdata
+        run: |
+          Rscript -e 'print(assessmentdata::stockAssessmentSummary)
           print(assessmentdata::stockAssessmentData)'
