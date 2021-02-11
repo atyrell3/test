@@ -19,4 +19,4 @@ jobs:
           Rscript -e 'install.packages("remotes")
           remotes::install_github("NOAA-EDAB/assessmentdata")
           print(assessmentdata::stockAssessmentSummary)
-          print(assessmentdata::stockAssessmentData)
+          print(assessmentdata::stockAssessmentData)'
