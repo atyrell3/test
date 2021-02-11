@@ -26,5 +26,5 @@ jobs:
           
       - name: Test assessmentdata
         run: |
-          Rscript -e 'print(assessmentdata::stockAssessmentSummary)
-          print(assessmentdata::stockAssessmentData)'
+          Rscript -e 'print(head(assessmentdata::stockAssessmentSummary))
+          print(head(assessmentdata::stockAssessmentData))'
